@@ -14,7 +14,7 @@ $ bundle install trello-list2card
 ```
 
 ## Configuration
-`list2card` requires a configuration file to operate. An example is available on [Github](https://github.com/tomonocle/trello-list2card/etc/config.toml.example), or you can follow the guide below.
+`list2card` requires a configuration file to operate. An example is available on [Github](https://github.com/tomonocle/trello-list2card/blob/master/etc/config.toml.example), or you can follow the guide below.
 
 ### Trello API key and token
 Visit [https://trello.com/app-key](https://trello.com/app-key) to get your unique API key and token.
