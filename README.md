@@ -10,7 +10,7 @@ Note: scheduling the execution of `list2card` is left as an exercise for the rea
 
 ## Installation
 ```
-$ bundle install trello-list2card
+$ gem install trello-list2card
 ```
 
 ## Configuration
