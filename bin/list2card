@@ -4,7 +4,7 @@ require 'trello/list2card'
 
 options = {}
 OptionParser.new do |opts|
-    opts.banner = 'Usage: trello-list2card -c <config> [options]'
+    opts.banner = 'Usage: list2card -c <config> [options]'
 
     opts.on( '-c', '--config <config>', 'Path to config file' ) {
         |c|
