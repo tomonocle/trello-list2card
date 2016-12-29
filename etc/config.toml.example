@@ -1,0 +1,23 @@
+# log_level
+# The log_level to operate at: debug/info/warn/error/fatal
+# log_level = 'warn'
+
+# user_key
+# Your trello API key, available at https://trello.com/app-key
+# e.g user_key = '1234567a12abcd1ab12a123456a1a1a1'
+user_key = ''
+
+# user_token
+# Your trello API token, available at https://trello.com/app-key
+# e.g user_token = '12a12a1a1ab1ab12ab1234567a1a12345a12abc12a1ab12a123ab1a1ab123a12'
+user_token = ''
+
+# source_list_id
+# The trello id of the list to summarise, available via '--list-lists <board>'
+# e.g source_list_id = '12a12345678901a1234ab123'
+source_list_id = ''
+
+# dest_card_id
+# The trello id of the card to write the summary to, available via '--list-cards <list>'
+# e.g dest_card_id = '12a12345678901a1234ab123'
+dest_card_id = ''

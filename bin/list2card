@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'trello/list2card'
+
+options = {}
+OptionParser.new do |opts|
+      opts.banner = 'Usage: trello-list2card -c <config> [options]'
+
+      opts.on( '-c', '--config <config>', 'Path to config file' ) {
+          |c|
+          options[ :config ] = c
+      }
+
+      opts.on( '-l', '--log-level <level>', 'Specify log level (debug,info,warn,error,fatal)' ) {
+          |l|
+          options[ :log_level ] = l
+      }
+
+      opts.on( '-d', '--dry-run', 'Dry run - don\'t change anything' ) {
+          options[ :dry_run ] = true
+      }
+
+      opts.on( '--list-boards', 'Enumerate all boards the user can access' ) {
+          options[ :list_boards ] = true
+      }
+
+      opts.on( '--list-lists <board>', 'Enumerate the lists under <board>' ) {
+          |b|
+          options[ :list_lists ] = b
+      }
+
+      opts.on( '--list-cards <list>', 'Enumerate the cards under <list>' ) {
+          |l|
+          options[ :list_cards ] = l
+      }
+
+      opts.on_tail( '-h', '--help', 'Display help' ) {
+          puts opts
+          exit
+      }
+end.parse!
+
+list2card = Trello::List2Card.new( options[ :config ], options[ :log_level ], options[ :dry_run ] )
+
+## dispatch/routing
+if ( options[ :list_boards ] )
+    list2card.do_listboards
+
+elsif ( options[ :list_lists ] )
+    list2card.do_listlists( options[ :list_lists ] )
+
+elsif ( options[ :list_cards ] )
+    list2card.do_listcards( options[ :list_cards ] )
+
+else 
+    list2card.do_run
+end
